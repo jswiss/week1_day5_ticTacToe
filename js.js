@@ -29,13 +29,16 @@ var wins = [
   [2, 4, 6]
 ];
 
-var currentPlayer = document.getElementById('currentplayer');
-var boxes = document.getElementsByClassName('boxes')[0];
+var currentPlayer = document.getElementById('currentPlayer');
+var boxes = document.getElementsByClassName('boxes')[i];
 
 console.log(currentPlayer);
 
 boxes.addEventListener('click', function() {
-  document.getElementsByClassName('boxes')[0].innerHTML = o;
+  document.getElementsByClassName('boxes')[i].innerHTML = x;
+  for (var i = 0; i < boxes.length; i++) {
+        boxes[i].addEventListener('click', boxes, false);
+  };
   //add return somewhere lower
 
 });
@@ -43,7 +46,7 @@ boxes.addEventListener('click', function() {
 function changePlayer(){
 //changes player from X to O || O to X after each move
 
- currentPlayer === 'X' ? currentPlayer === 'O' : currentPlayer === 'X';
+ currentPlayer === x ? currentPlayer === o : currentPlayer === x;
  document.getElementById('currentPlayer').innerHTML = currentPlayer;
 }
 

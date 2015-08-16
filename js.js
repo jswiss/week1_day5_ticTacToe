@@ -1,24 +1,20 @@
 
+  //Sort out currentPlayer issue
+  //allow any box to be clicked, not just [0]
+  //record the game in an array
+  //compare game array to winning array
+  //output winner
 
-  //1. Need to make it so when a box is clicked on, it will show 'x' or 'o' http://stackoverflow.com/questions/14882751/click-toggle-with-jquery-javascript
+  //Need to record x's and o's from each game in an array
 
-  //2. need to write out all winning combos
+  //Need to identify winning combos with a loop
 
-  //3. need to record x's and o's from each game in an array
+  //Need to track the score
 
-  //4. Need to identify winning combos with a loop
+  //Need a refresh button that resets the board --> I think we had one of these for rockpaperscissors
 
-  //5. need to change from player 1 to player two on every other click
+  //Need to make sure html/css doesn't go haywire
 
-  //6. Need to block off ability to re-click box
-
-  //7. Need to track the score
-
-  //8. Need a refresh button that resets the board --> I think we had one of these for 
-
-  //9. need to make sure html/css doesn't go haywire
-
-  //10. Maybe link the storage array to what is shown on the board, and use a button to clear the array, thus clearing the board?
 
 var x = 'x';
 var o = 'o';
@@ -33,19 +29,23 @@ var wins = [
   [2, 4, 6]
 ];
 
-var choices = ('x', 'o');
-
+var currentPlayer = document.getElementById('currentplayer');
 var boxes = document.getElementsByClassName('boxes')[0];
+
+console.log(currentPlayer);
 
 boxes.addEventListener('click', function() {
   document.getElementsByClassName('boxes')[0].innerHTML = o;
   //add return somewhere lower
-  //add if statement here for x/o
 
-
- 
 });
 
+function changePlayer(){
+//changes player from X to O || O to X after each move
+
+ currentPlayer === 'X' ? currentPlayer === 'O' : currentPlayer === 'X';
+ document.getElementById('currentPlayer').innerHTML = currentPlayer;
+}
 
 
 function boxClick(boxes) {
@@ -54,6 +54,7 @@ function boxClick(boxes) {
    };
 }   
 
+changePlayer();
 
 
 //Write a function that records x values in exes, o values in o's

@@ -19,14 +19,25 @@
   //9. need to make sure html/css doesn't go haywire
 
   //10. Maybe link the storage array to what is shown on the board, and use a button to clear the array, thus clearing the board?
-var choices = ('x', 'o');
 
-var boxes = document.getElementsByClassName('boxes');
+var x = 'x';
+var o = 'o';
 
-boxes.addEventListener('click', function(x) {
-  document.getElementsByClassName('boxes').innerHTML = 'x';
-  console.log(boxes+'helloError');
-});
+function mouseMotion(ref, motion) {
+    if (motion === 'over') {
+        ref.style.borderColor = '#E00';
+    } else if (motion == 'out') {
+        ref.style.borderColor = '#CCC';
+    }
+};
+
+  var tickBoxes = document.getElementsByClassName('boxes')[0];
+
+  tickBoxes.addEventListener('click', function() {
+    document.getElementsByClassName('boxes')[0].innerHTML = x;
+    console.log('helloError');
+  })
+
 
 var wins = [
   [0, 1, 2],
@@ -39,7 +50,7 @@ var wins = [
   [2, 4, 6]
 ];
 
-wins[0][2];
+var choices = ('x', 'o');
 
 //Write a function that records x values in exes, o values in o's
 // var exes =  [];

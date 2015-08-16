@@ -1,4 +1,7 @@
 
+
+
+
   //Sort out currentPlayer issue
   //allow any box to be clicked, not just [0]
   //record the game in an array
@@ -16,39 +19,53 @@
   //Need to make sure html/css doesn't go haywire
 
 
-var x = 'x';
-var o = 'o';
-var wins = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
-];
-
-var currentPlayer = document.getElementById('currentPlayer');
-var boxes = document.getElementsByClassName('boxes')[i];
-
-console.log(currentPlayer);
-
-boxes.addEventListener('click', function() {
-  document.getElementsByClassName('boxes')[i].innerHTML = x;
+//returns array of boxes class
+function readXO(boxes) {
+  var boxes = document.getElementsByClassName('boxes');
+  var gameEntries = [];
   for (var i = 0; i < boxes.length; i++) {
-        boxes[i].addEventListener('click', boxes, false);
-  };
+    gameEntries[i] = boxes[i];
+    // gameEntries.push(boxes[i]);
+  }
+  return gameEntries;
+}
+readXO();
+
+
+var game = function () {
+  var x = 'x';
+  var o = 'o';
+  var wins = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  var currentPlayer = document.getElementById('currentPlayer');
+  
+
+  console.log(currentPlayer);
+
+  boxes.addEventListener('click', function() {
+    document.getElementsByClassName('boxes')[i].innerHTML = x;
+    for (var i = 0; i < boxes.length; i++) {
+          boxes[i].addEventListener('click', boxes, false);
+    };
   //add return somewhere lower
 
 });
 
-function changePlayer(){
-//changes player from X to O || O to X after each move
+// function changePlayer(){
+// //changes player from X to O || O to X after each move
 
- currentPlayer === x ? currentPlayer === o : currentPlayer === x;
- document.getElementById('currentPlayer').innerHTML = currentPlayer;
-}
+//  currentPlayer === x ? currentPlayer === o : currentPlayer === x;
+//  document.getElementById('currentPlayer').innerHTML = currentPlayer;
+// }
 
 
 function boxClick(boxes) {
@@ -59,6 +76,7 @@ function boxClick(boxes) {
 
 changePlayer();
 
+};
 
 //Write a function that records x values in exes, o values in o's
 // var exes =  [];

@@ -22,23 +22,6 @@
 
 var x = 'x';
 var o = 'o';
-
-function mouseMotion(ref, motion) {
-    if (motion === 'over') {
-        ref.style.borderColor = '#E00';
-    } else if (motion == 'out') {
-        ref.style.borderColor = '#CCC';
-    }
-};
-
-  var tickBoxes = document.getElementsByClassName('boxes')[0];
-
-  tickBoxes.addEventListener('click', function() {
-    document.getElementsByClassName('boxes')[0].innerHTML = x;
-    console.log('helloError');
-  })
-
-
 var wins = [
   [0, 1, 2],
   [3, 4, 5],
@@ -51,6 +34,27 @@ var wins = [
 ];
 
 var choices = ('x', 'o');
+
+var boxes = document.getElementsByClassName('boxes')[0];
+
+boxes.addEventListener('click', function() {
+  document.getElementsByClassName('boxes')[0].innerHTML = o;
+  //add return somewhere lower
+  //add if statement here for x/o
+
+
+ 
+});
+
+
+
+function boxClick(boxes) {
+  if (boxes.innerHTML === x || boxes.innerHTML === o) {
+    return;
+   };
+}   
+
+
 
 //Write a function that records x values in exes, o values in o's
 // var exes =  [];

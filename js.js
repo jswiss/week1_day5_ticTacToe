@@ -19,18 +19,15 @@
   //Need to make sure html/css doesn't go haywire
 
 
-//returns array of boxes class
+//returns array of 
 function readXO(boxes) {
   var boxes = document.getElementsByClassName('boxes');
   var gameEntries = [];
   for (var i = 0; i < boxes.length; i++) {
     gameEntries[i] = boxes[i];
-    // gameEntries.push(boxes[i]);
   }
   return gameEntries;
 }
-readXO();
-
 
 var game = function () {
   var x = 'x';

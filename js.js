@@ -4,7 +4,9 @@ console.log('linked');
   var box = document.getElementById('box7');
   console.log(boxes);
   var nextTurn = 'x'
-  var showMoves = document.getElementsByClassName('boxes')[i].innerHTML = nextTurn;
+  function showMoves () {
+    document.getElementsByClassName('boxes')[i].innerHTML = nextTurn;
+  };  
 
 function beginGame() {
   addEventListener();
@@ -49,4 +51,5 @@ function playerTurn() {
 };
 
 playerTurn();
+showMoves();
 
